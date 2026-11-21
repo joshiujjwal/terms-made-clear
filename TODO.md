@@ -38,15 +38,25 @@ changes. ADR 0002 records the deviation and remaining editorial boundaries.
       `npm test`: 20 passed. `npm run lint`, `npm run format:check`,
       `npm run typecheck`, and `npm run build` succeeded. `npm ci` reproduced
       the lockfile; dev and preview responded at the expected project path.
-- [ ] Verify the checked Pages CI workflow for the deployed revision.
-- [ ] Commit/push the approved preview, enable Actions-based Pages, and verify
+- [x] Verify the checked Pages CI workflow for the deployed revision.
+      Evidence: [run 44945891435](https://github.com/joshiujjwal/terms-made-clear/actions/runs/44945891435)
+      passed install, 20 unit tests, lint/format/typecheck, export build, 9 browser
+      tests, and deployment for application commit `77a3170`.
+- [x] Commit/push the approved preview, enable Actions-based Pages, and verify
       the deployed homepage, filters, deep links, and assets.
+      Live: https://joshiujjwal.github.io/terms-made-clear/ . Chromium checks
+      confirmed homepage HTTP 200 and loaded CSS, search, category filters,
+      pagination, direct detail reload, methodology/corrections, and custom HTTP 404. No runtime errors or failed requests other than normal navigation
+      cancellations of Next.js prefetches.
 
 **Remaining blockers:** human editorial reviewer and policy-source approval;
 reviewed records, actual regions, citation/version schema, transactional imports,
 PostgreSQL tooling, full accessibility audit, and full-product release signoff.
 ESLint 9 is pinned for Next plugin peer compatibility despite upstream
 deprecation; upgrade when compatible plugins are available (ADR 0002).
+CI also reports Node.js 20 deprecation annotations for the Pages action versions;
+GitHub ran them successfully with Node.js 24. Update supported action majors
+in a focused follow-up, retaining the same deployment checks.
 
 ## Phase 0: Foundation
 
@@ -58,9 +68,10 @@ deprecation; upgrade when compatible plugins are available (ADR 0002).
     the United States as the initial review target, not confirmed applicability.
     All terms/privacy statuses are `not_reviewed`; reviewer assignment and human
     signoff remain blockers.
-  - Local dataset checks: 30 entries, required fields, unique slugs/URLs, HTTPS
-    syntax, allowed categories/types, and both unreviewed statuses. No existing
-    test harness is available; no application tests or live-source checks ran.
+  - Initial dataset checks: 30 entries, required fields, unique slugs/URLs, HTTPS
+    syntax, allowed categories/types, and both unreviewed statuses. At that time
+    no test harness existed; no application tests or live-source checks ran.
+    The later static-preview verification is recorded above.
 - [ ] Select package manager, supported Node.js version, database driver/migrations,
       and integration/browser test tools; record the tradeoffs in an ADR.
 - [x] Initialize Next.js App Router, strict TypeScript, and Tailwind under `src/`.

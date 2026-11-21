@@ -16,7 +16,7 @@ evidence. See [ADR 0002](adr/0002-static-pages-preview.md).
 Each service has a unique lowercase hyphenated `slug`, display `name`, official
 HTTPS `website`, `category`, `serviceType`, and separate terms/privacy
 `reviewStatus` values. Add or replace entries in `services` to customize the list.
-Keep both statuses `not_reviewed` in this planning file; future publication
+Keep both statuses `not_reviewed` in this starter file; future publication
 status must come from reviewed database records, not a manually edited flag.
 
 Categories are `social`, `messaging`, `streaming`, `shopping`, `payments`,
@@ -33,14 +33,16 @@ or an absence of concerns.
 
 ## Improvements to build next
 
-1. Establish the runnable Next.js foundation and test harness before reader UI.
+1. Extend the now-runnable static foundation with a separately approved
+   PostgreSQL setup and disposable database integration tests for the full
+   product; GitHub Pages cannot host that runtime.
 2. Add a separate, schema-validated service-only seed path that can prefill names
    and homepage links without creating policy versions or published reviews.
    Use stable slugs for idempotency; reject duplicates and malformed HTTPS URLs,
    and roll back failed imports. Record the seed design in an ADR first.
-3. Show unreviewed services in the directory with explicit missing-coverage
-   labels, never blank sections that could imply safety. Keep documented-concern
-   filtering based only on published findings.
+3. Preserve the preview's explicit missing-coverage labels as reviewed content
+   is added, never blank sections that could imply safety. Add documented-concern
+   filtering only when supported published findings exist.
 4. Maintain an editorial queue per service, policy kind, and actual region.
    Confirm official policy URLs and access/reuse conditions with approval before
    fetching; capture immutable versions and short, version-specific citations.
