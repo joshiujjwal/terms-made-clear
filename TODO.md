@@ -82,7 +82,14 @@ This changes presentation and homepage entry, not policy coverage.
       homepage search. Visually reviewed screenshots are in session artifacts:
       `reference-home-1280.png`, `reference-home-390.png`, and catalog/detail
       counterparts. These checks do not certify full WCAG compliance.
-- [ ] Publish and verify the redesigned Pages release.
+- [x] Publish and verify the redesigned Pages release.
+      [Run 44955793723](https://github.com/joshiujjwal/terms-made-clear/actions/runs/44955793723)
+      passed all checks and deployed application commit `812b940`.
+      The live site shows the new heading and self-hosted typography; homepage
+      search, direct detail reload, missing coverage, and desktop/mobile layouts
+      were verified without browser runtime errors. A live Impeccable scan exits
+      0 with no findings. Deployed screenshots are in session artifacts as
+      `reference-live-home-1280.png` and `reference-live-home-390.png`.
 
 Design tooling is local: `npm exec -- impeccable detect src/` for source checks,
 or `npm exec -- impeccable detect http://127.0.0.1:4173/terms-made-clear/`
