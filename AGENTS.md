@@ -2,20 +2,25 @@
 
 ## Setup and commands
 
-This is a specification-only scaffold. There is no package manifest, application,
-or test runner. Do not run guessed scripts or report unavailable checks as passing.
+This repository has a Next.js static catalog preview for GitHub Pages, not the
+full database-backed product. Use Node.js 22 (at least 22.13) and the npm lockfile.
+See `docs/adr/0002-static-pages-preview.md` for the approved preview exception.
 
-| Operation | Command |
-| --- | --- |
-| Install dependencies | TODO: select package manager and commit its lockfile |
-| Start development | TODO: define dev script in Phase 0 |
-| Configure/migrate database | TODO: select and document PostgreSQL tooling |
-| Run tests | TODO: add and verify the test runner in Phase 0 |
-| Lint/format check | TODO: add and verify scripts in Phase 0 |
-| Typecheck/build | TODO: add and verify scripts in Phase 0 |
+| Operation                  | Command                                          |
+| -------------------------- | ------------------------------------------------ |
+| Install dependencies       | `npm ci`                                         |
+| Start development          | `npm run dev`                                    |
+| Static preview             | `npm run build && npm run preview`               |
+| Configure/migrate database | Deferred; no database in the Pages preview       |
+| Run unit/browser tests     | `npm test` / `npm run build && npm run test:e2e` |
+| Lint/format check          | `npm run lint` / `npm run format:check`          |
+| Apply formatting           | `npm run format`                                 |
+| Typecheck/build            | `npm run typecheck` / `npm run build`            |
 
-When adding tooling, replace these placeholders in README, AGENTS, and CLAUDE
-with exact commands that have been executed successfully.
+Development uses http://localhost:3000/terms-made-clear/; static preview uses
+http://127.0.0.1:4173/terms-made-clear/. Build before browser tests. If Chromium is
+missing, install it with `npx playwright install chromium`. Keep commands in
+README, AGENTS, and CLAUDE synchronized with verified scripts.
 
 ## Read first
 
@@ -26,6 +31,8 @@ Source lives under `src/`; tests mirror it under `tests/`.
 ## Stack and code style
 
 - Next.js App Router, strict TypeScript, Tailwind CSS, PostgreSQL.
+- Current preview: static export with validated starter JSON; PostgreSQL,
+  imports, and publication remain deferred. Never invent reviews to fill gaps.
 - Prefer server rendering for catalog and policy details.
 - Use `const`, named exports, async/await, early returns, and narrow types.
 - Framework-mandated default exports are allowed for route components.

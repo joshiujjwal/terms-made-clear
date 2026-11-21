@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "status": "editorial_starter",
+  "targetReviewRegion": "United States",
+  "selectionBasis": "Curated starter selection; not a measured popularity ranking.",
+  "services": [
+    {
+      "slug": "facebook",
+      "name": "Facebook",
+      "website": "https://www.facebook.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "website": "https://www.instagram.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "website": "https://www.tiktok.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "website": "https://www.reddit.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "x",
+      "name": "X",
+      "website": "https://x.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "website": "https://www.linkedin.com/",
+      "category": "social",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "website": "https://discord.com/",
+      "category": "messaging",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "whatsapp",
+      "name": "WhatsApp",
+      "website": "https://www.whatsapp.com/",
+      "category": "messaging",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "telegram",
+      "name": "Telegram",
+      "website": "https://telegram.org/",
+      "category": "messaging",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "signal",
+      "name": "Signal",
+      "website": "https://signal.org/",
+      "category": "messaging",
+      "serviceType": "app",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "website": "https://www.youtube.com/",
+      "category": "streaming",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "website": "https://www.netflix.com/",
+      "category": "streaming",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "website": "https://www.spotify.com/",
+      "category": "streaming",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "twitch",
+      "name": "Twitch",
+      "website": "https://www.twitch.tv/",
+      "category": "streaming",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "website": "https://www.amazon.com/",
+      "category": "shopping",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "ebay",
+      "name": "eBay",
+      "website": "https://www.ebay.com/",
+      "category": "shopping",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "etsy",
+      "name": "Etsy",
+      "website": "https://www.etsy.com/",
+      "category": "shopping",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "website": "https://www.paypal.com/",
+      "category": "payments",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "google-drive",
+      "name": "Google Drive",
+      "website": "https://drive.google.com/",
+      "category": "productivity",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "dropbox",
+      "name": "Dropbox",
+      "website": "https://www.dropbox.com/",
+      "category": "productivity",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "website": "https://www.notion.com/",
+      "category": "productivity",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "microsoft-365",
+      "name": "Microsoft 365",
+      "website": "https://www.microsoft.com/microsoft-365",
+      "category": "productivity",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "website": "https://chatgpt.com/",
+      "category": "ai",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "website": "https://claude.ai/",
+      "category": "ai",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "gemini",
+      "name": "Gemini",
+      "website": "https://gemini.google.com/",
+      "category": "ai",
+      "serviceType": "app_and_website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "website": "https://github.com/",
+      "category": "developer",
+      "serviceType": "website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "website": "https://about.gitlab.com/",
+      "category": "developer",
+      "serviceType": "website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "wordpress",
+      "name": "WordPress.org",
+      "website": "https://wordpress.org/",
+      "category": "developer",
+      "serviceType": "project",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "firefox",
+      "name": "Mozilla Firefox",
+      "website": "https://www.firefox.com/",
+      "category": "developer",
+      "serviceType": "project",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
+      "slug": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "website": "https://code.visualstudio.com/",
+      "category": "developer",
+      "serviceType": "project",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    }
+  ]
+}

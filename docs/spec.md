@@ -6,7 +6,24 @@ A searchable database explaining the terms and conditions and privacy policies
 of popular apps and websites in plain language. Readers can identify meaningful
 tradeoffs, inspect cited red flags, and follow links to the original policies.
 
-Status: specification only. No application, dependencies, or dataset exists yet.
+Status: the full evidence-backed product is planned. A runnable static preview
+now exposes 30 curated service identities with explicit unreviewed coverage.
+No policy versions, summaries, citations, or findings are published.
+
+## Approved static preview
+
+The user approved a GitHub Pages deployment, documented in ADR 0002. This limited
+release uses Next.js static export and build-time-validated JSON, not PostgreSQL
+or a server. It includes browser-side literal name search, category filters,
+20-item pagination, shareable validated parameters, generated service details,
+methodology, and a GitHub Issues corrections channel.
+
+United States is the initial review target, not confirmed policy applicability.
+Unknown dates and policy coverage remain explicit. Concern filters and reviewed
+explanations are deferred until actual evidence exists. Interactive filtering
+requires JavaScript; all detail links remain available in a static fallback.
+The architecture and transactional requirements below describe the future full
+product, not capabilities of the Pages preview.
 
 ## Problem
 
@@ -22,7 +39,7 @@ unsupported score or a claim that a service is safe.
 - [ ] Show a short overview and topic-based explanations in everyday language.
 - [ ] Explain red flags, their practical impact, and the supporting source.
 - [ ] Display the applicable region, source URL, policy effective date when
-  stated, retrieval date, and editorial review date.
+      stated, retrieval date, and editorial review date.
 - [ ] Link findings to their exact policy version and a short supporting excerpt.
 - [ ] Mark missing documents, ambiguous clauses, and outdated reviews explicitly.
 - [ ] Publish methodology and a process for reporting factual corrections.
@@ -62,15 +79,15 @@ clauses support them; do not generate flags from a checklist alone.
 
 ## Data model
 
-| Entity | Fields and invariants |
-| --- | --- |
-| Service | UUID, unique slug, name, official HTTPS website, category |
-| PolicyVersion | UUID, service ID, kind (`terms` or `privacy`), official HTTPS source URL, region, optional effective date, retrieved timestamp, content SHA-256, optional predecessor ID |
-| Review | UUID, policy-version ID, status (`draft`, `published`, `superseded`), overview, reviewed timestamp, next-review date, methodology version |
-| Citation | UUID, policy-version ID, section label, optional anchor, short verbatim excerpt |
-| SummaryPoint | UUID, review ID, topic, plain-language explanation |
-| Finding | UUID, review ID, topic, title, policy statement, practical impact, uncertainty note when applicable |
-| SummaryCitation / FindingCitation | Join tables; each citation must reference the same policy version as its review |
+| Entity                            | Fields and invariants                                                                                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Service                           | UUID, unique slug, name, official HTTPS website, category                                                                                                                |
+| PolicyVersion                     | UUID, service ID, kind (`terms` or `privacy`), official HTTPS source URL, region, optional effective date, retrieved timestamp, content SHA-256, optional predecessor ID |
+| Review                            | UUID, policy-version ID, status (`draft`, `published`, `superseded`), overview, reviewed timestamp, next-review date, methodology version                                |
+| Citation                          | UUID, policy-version ID, section label, optional anchor, short verbatim excerpt                                                                                          |
+| SummaryPoint                      | UUID, review ID, topic, plain-language explanation                                                                                                                       |
+| Finding                           | UUID, review ID, topic, title, policy statement, practical impact, uncertainty note when applicable                                                                      |
+| SummaryCitation / FindingCitation | Join tables; each citation must reference the same policy version as its review                                                                                          |
 
 Store dates/timestamps in PostgreSQL using explicit UTC timestamps where
 appropriate. Effective dates may be unknown; do not replace them with retrieval
@@ -90,13 +107,13 @@ Use server-rendered catalog/detail pages and parameterized database queries.
 Database driver, migration tooling, and package versions are chosen in Phase 0
 and recorded in an ADR before dependent implementation.
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Search entry point, product limitations, catalog link |
-| `/services?q=&category=&topic=&page=` | Search/filter catalog; page size 20 |
-| `/services/[slug]` | Separate reviewed terms and privacy sections with citations |
-| `/methodology` | Topic definitions, evidence rules, versioning, staleness |
-| `/corrections` | Correction process and contact channel chosen before launch |
+| Route                                 | Purpose                                                     |
+| ------------------------------------- | ----------------------------------------------------------- |
+| `/`                                   | Search entry point, product limitations, catalog link       |
+| `/services?q=&category=&topic=&page=` | Search/filter catalog; page size 20                         |
+| `/services/[slug]`                    | Separate reviewed terms and privacy sections with citations |
+| `/methodology`                        | Topic definitions, evidence rules, versioning, staleness    |
+| `/corrections`                        | Correction process and contact channel chosen before launch |
 
 No public JSON API or admin UI is required for the first version. Use a
 maintainer-operated, schema-validated import command for curated records.
@@ -120,7 +137,7 @@ Preserve search filters when navigating pages.
 - [ ] Log operational errors server-side without exposing credentials or user input.
 - [ ] Use bounded pagination and indexed service lookup.
 - [ ] Publish only short necessary excerpts plus original analysis; check source
-  access/reuse restrictions before importing any real policies.
+      access/reuse restrictions before importing any real policies.
 
 ## Test plan
 
@@ -148,5 +165,7 @@ and database behavior, plus browser tests for core reader flows.
 - ORM/driver, migrations, test tools, hosting, and database provider.
 - Public corrections contact channel and expected response process.
 
-The empty catalog is the default until real, cited, human-reviewed records exist.
+No published reviews is the default until real, cited, human-reviewed records
+exist. The approved preview may list starter service identities with explicit
+unreviewed labels; those identities are not policy evidence.
 Use clearly synthetic fixtures in tests; do not fabricate real-service findings.

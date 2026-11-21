@@ -1,8 +1,9 @@
 # Terms Made Clear
 
 Read `AGENTS.md`, `docs/spec.md`, and `TODO.md` before changes.
-This scaffold currently has no runnable application or package manifest.
-Command placeholders must be replaced with verified commands during Phase 0.
+This repository has a runnable, unreviewed static catalog preview for Pages.
+Use the verified commands in AGENTS.md; the full database product is deferred.
+See docs/adr/0002-static-pages-preview.md for the approved hosting scope.
 
 ## Stack and conventions
 

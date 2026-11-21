@@ -2,27 +2,35 @@
 
 ## Commands and current state
 
-Specification-only scaffold: no application, manifest, or test runner exists.
-Do not claim tests passed when they could not run.
+Runnable Next.js static catalog preview with 30 unreviewed starter services.
+Use Node.js 22 (at least 22.13) and npm. The Pages preview cannot run PostgreSQL;
+the full policy publication product remains deferred.
 
-| Task | Command |
-| --- | --- |
-| Install | TODO: choose package manager in Phase 0 |
-| Dev | TODO: create and verify the dev script |
-| Database/migrate | TODO: choose tooling and document local PostgreSQL |
-| Tests | TODO: create and verify the test command |
-| Lint/format | TODO: create and verify lint and format-check commands |
-| Typecheck/build | TODO: create and verify both commands |
+| Task               | Command                                          |
+| ------------------ | ------------------------------------------------ |
+| Install            | `npm ci`                                         |
+| Dev                | `npm run dev`                                    |
+| Static preview     | `npm run build && npm run preview`               |
+| Database/migrate   | Deferred; no database in this preview            |
+| Unit/browser tests | `npm test` / `npm run build && npm run test:e2e` |
+| Lint/format        | `npm run lint` / `npm run format:check`          |
+| Apply formatting   | `npm run format`                                 |
+| Typecheck/build    | `npm run typecheck` / `npm run build`            |
 
-Replace these placeholders alongside README and AGENTS when tooling lands.
+Keep these commands synchronized with README and AGENTS. Dev uses
+http://localhost:3000/terms-made-clear/ and preview uses port 4173 at the same path.
+Browser tests need a build and Chromium; if missing, use
+`npx playwright install chromium`. See ADR 0002 for the hosting scope.
 
 ## Project map
 
 - `docs/spec.md`: product contract, evidence rules, domain model, edge cases.
 - `TODO.md`: implementation state, evidence gates, and lessons.
 - `docs/adr/`: accepted technical decisions; `0001-template.md` is only a template.
-- `src/`: reserved for Next.js App Router application code.
-- `tests/`: reserved for tests mirroring source.
+- `src/`: App Router pages, catalog controls, validation, and search.
+- `data/catalog.json`: starter service identities, never policy evidence.
+- `tests/`: Vitest validation/search and Playwright exported reader flows.
+- `.github/workflows/pages.yml`: checked build and GitHub Pages deployment.
 - `.github/instructions/`: path-specific requirements.
 - `.github/skills/`: reserved for reusable project skills.
 
@@ -47,7 +55,8 @@ or bundle unrelated cleanup; track unrelated work separately.
 - Effective, retrieved, and reviewed dates have different meanings.
 - A next-review-date notice is not evidence that a source changed.
 - No findings does not mean no risks; missing coverage must stay visible.
-- Use synthetic fixtures until real source material has editorial approval.
+- Tests use synthetic fixtures; the real starter catalog includes identities
+  only, never source-policy claims.
 - Preserve published policy versions; replace reviews atomically with history.
 - No broad scraping, full-policy reproduction, or third-party LLM upload is
   authorized by the scaffold.
