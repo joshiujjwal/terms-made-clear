@@ -33,11 +33,11 @@ export default async function ServicePage({ params }: Props) {
       </Link>
       <div className="detail-heading">
         <div>
-          <span className="eyebrow">
+          <h1>{service.name}</h1>
+          <p className="service-taxonomy">
             {categoryLabels[service.category]} /{" "}
             {serviceTypeLabels[service.serviceType]}
-          </span>
-          <h1>{service.name}</h1>
+          </p>
           <p>A catalog entry, not a policy assessment.</p>
         </div>
         <a className="button secondary" href={service.website}>

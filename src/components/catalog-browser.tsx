@@ -8,7 +8,7 @@ import {
   type Service,
 } from "../lib/catalog";
 import { sitePath } from "../lib/site";
-import { ServiceCard } from "./service-card";
+import { ServiceRow } from "./service-row";
 
 function subscribe(callback: () => void) {
   window.addEventListener("popstate", callback);
@@ -118,9 +118,15 @@ export function CatalogBrowser({ services }: { services: Service[] }) {
             </span>
           </div>
           {result.total ? (
-            <div className="service-grid">
+            <div className="service-directory">
+              <div className="directory-columns" aria-hidden="true">
+                <span>Service</span>
+                <span>Category</span>
+                <span>Terms</span>
+                <span>Privacy</span>
+              </div>
               {result.services.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
+                <ServiceRow key={service.slug} service={service} />
               ))}
             </div>
           ) : (

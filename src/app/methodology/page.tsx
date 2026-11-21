@@ -6,12 +6,7 @@ export const metadata: Metadata = { title: "Methodology" };
 export default function MethodologyPage() {
   return (
     <div className="shell section reading-page">
-      <span className="eyebrow">THE EDITORIAL STANDARD</span>
-      <h1>
-        Evidence before
-        <br />
-        <em>explanations.</em>
-      </h1>
+      <h1>Evidence before explanations.</h1>
       <p className="lede">
         Clear language only helps when it stays faithful to the source. Here is
         the standard we will require before publishing a policy review.

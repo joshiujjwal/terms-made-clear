@@ -5,11 +5,7 @@ export const metadata: Metadata = { title: "Corrections" };
 export default function CorrectionsPage() {
   return (
     <div className="shell section reading-page">
-      <span className="eyebrow">HELP KEEP THE RECORD STRAIGHT</span>
-      <h1>
-        Clarity is a<br />
-        <em>work in progress.</em>
-      </h1>
+      <h1>Report a correction.</h1>
       <p className="lede">
         Found an incorrect name, broken homepage link, or confusing limitation?
         Report it through the project&apos;s GitHub Issues.

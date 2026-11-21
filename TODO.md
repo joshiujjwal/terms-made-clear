@@ -58,6 +58,39 @@ CI also reports Node.js 20 deprecation annotations for the Pages action versions
 GitHub ran them successfully with Node.js 24. Update supported action majors
 in a focused follow-up, retaining the same deployment checks.
 
+## Reference-index redesign
+
+The user approved a search-first reference index and publication to the existing
+Pages site, using [Impeccable](https://impeccable.style/designing/) as guidance.
+This changes presentation and homepage entry, not policy coverage.
+
+- [x] Establish baseline: 20 unit tests and 9 browser tests passed.
+- [x] Write homepage-search test first; confirm red because the homepage had no
+      search input. The redesigned native GET form opens validated catalog search.
+- [x] Replace italic headlines, metric panels, monograms, numbered decorations,
+      and rounded-card grids with self-hosted Archivo, ink/off-white surfaces,
+      restrained orange actions, and reusable service rows.
+- [x] Retain terms/privacy missing-coverage labels, unknown dates, regional
+      uncertainty, plain-text rendering, source links, and no-JavaScript access.
+- [x] Finish final reader tests, Impeccable scans, and screenshot/focus review.
+      `npm test`: 20 passed; `npm run test:e2e`: 10 passed. Lint, format check,
+      typecheck, and static build succeeded. Impeccable 4.10.0 source scan
+      reports no findings; rendered scans of home/catalog at desktop/mobile
+      widths and a detail page also exit 0 without findings.
+      Archivo loads locally; home/catalog/detail have no horizontal overflow at
+      320, 390, 768, and 1280px. Keyboard checks cover skip-to-main and focus on
+      homepage search. Visually reviewed screenshots are in session artifacts:
+      `reference-home-1280.png`, `reference-home-390.png`, and catalog/detail
+      counterparts. These checks do not certify full WCAG compliance.
+- [ ] Publish and verify the redesigned Pages release.
+
+Design tooling is local: `npm exec -- impeccable detect src/` for source checks,
+or `npm exec -- impeccable detect http://127.0.0.1:4173/terms-made-clear/`
+against `npm run preview`. Add `--viewport 390x844` for a mobile scan.
+No Impeccable hooks, global configuration, AI uploads, or policy retrieval were
+enabled. A clean detector result is not a full accessibility audit or human
+editorial approval.
+
 ## Phase 0: Foundation
 
 - [x] Record the product spec, editorial invariants, and initial scope.

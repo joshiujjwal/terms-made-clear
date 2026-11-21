@@ -6,11 +6,11 @@ test("should show the homepage limitations when opening the exported site", asyn
   await page.goto("./");
   await expect(
     page.getByRole("heading", {
-      name: "Know the service. Understand the tradeoffs.",
+      name: "Before you agree.",
     }),
   ).toBeVisible();
   await expect(
-    page.getByText("30 services. No published policy reviews yet."),
+    page.getByText("No published policy reviews yet.", { exact: true }),
   ).toBeVisible();
   await page.screenshot({
     path: testInfo.outputPath("homepage-desktop.png"),
@@ -20,6 +20,21 @@ test("should show the homepage limitations when opening the exported site", asyn
     .getByRole("link", { name: "Browse the catalog", exact: true })
     .click();
   await expect(page.getByLabel("Search services")).toBeVisible();
+});
+
+test("should search directly from the homepage when a service name is entered", async ({
+  page,
+}) => {
+  await page.goto("./");
+  await page.getByLabel("Search services").fill("signal");
+  await page
+    .getByRole("button", { name: "Find a service", exact: true })
+    .click();
+  await expect(page).toHaveURL(/services\/\?q=signal/);
+  await expect(page.getByRole("status")).toContainText("1 service");
+  await expect(
+    page.getByRole("link", { name: "Signal", exact: true }),
+  ).toBeVisible();
 });
 
 test("should search and preserve history when filters change", async ({
@@ -114,6 +129,8 @@ test("should keep navigation keyboard accessible when viewed on mobile", async (
   ).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page.locator("#main")).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(page.getByLabel("Search services")).toBeFocused();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,

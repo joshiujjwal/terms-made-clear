@@ -22,14 +22,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <header className="site-header">
           <div className="shell header-inner">
             <Link className="brand" href="/" aria-label="Terms Made Clear home">
-              <span className="brand-mark" aria-hidden="true">
-                tm
-              </span>
-              <span>
-                terms made clear
-                <span className="brand-caption">
-                  LESS GUESSWORK. MORE CONTEXT.
-                </span>
+              terms made clear
+              <span className="brand-stop" aria-hidden="true">
+                .
               </span>
             </Link>
             <nav aria-label="Main navigation">
@@ -45,7 +40,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="site-footer">
           <div className="shell footer-inner">
             <div>
-              <strong>Clarity starts with honesty.</strong>
+              <Link className="footer-brand" href="/">
+                Terms made clear.
+              </Link>
               <p>Informational summaries, not legal advice.</p>
             </div>
             <p className="footer-note">

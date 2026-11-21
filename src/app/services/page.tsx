@@ -8,12 +8,7 @@ export default function ServicesPage() {
   return (
     <div className="shell section">
       <div className="page-heading">
-        <span className="eyebrow">THE STARTER DIRECTORY</span>
-        <h1>
-          Your tools.
-          <br />
-          <em>A clearer starting point.</em>
-        </h1>
+        <h1>Service directory.</h1>
         <p>
           Browse {catalog.services.length} curated apps, websites, and projects.
           This is not a popularity ranking.
