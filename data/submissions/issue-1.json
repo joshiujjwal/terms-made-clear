@@ -1,0 +1,12 @@
+{
+  "serviceSlug": "github",
+  "kind": "terms",
+  "sourceUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+  "region": "Unknown",
+  "schemaVersion": 1,
+  "issueNumber": 1,
+  "issueUrl": "https://github.com/joshiujjwal/terms-made-clear/issues/1",
+  "submittedAt": "2026-11-22T00:05:50Z",
+  "status": "unverified",
+  "editorialApproval": null
+}
