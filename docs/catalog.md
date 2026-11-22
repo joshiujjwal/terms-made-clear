@@ -1,6 +1,6 @@
 # Prefilled starter catalog
 
-`data/catalog.json` contains 30 well-known apps, websites, and developer projects
+`data/catalog.json` contains 31 apps, websites, and developer projects
 for initial editorial planning. It is a curated selection, not a measured
 popularity ranking. The intended first review region is the United States;
 that target does not establish the applicability of any service's policies.
@@ -30,6 +30,12 @@ effective dates, retrieval dates, and review dates remain unrecorded. No policy
 content was fetched, and no summaries, excerpts, findings, or safety scores are
 included. `not_reviewed` means missing editorial coverage, not a missing policy
 or an absence of concerns.
+
+Apple Developer is a separate entry for developer-program membership, not
+Apple's consumer services. Its unpublished PDF-based research lives in
+`data/research.json`; no privacy policy is inferred from the program agreement.
+The supplied file stays local. See [research provenance](policy-research.md)
+and [ADR 0004](adr/0004-local-pdf-research.md).
 
 ## Improvements to build next
 

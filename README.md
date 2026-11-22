@@ -2,7 +2,7 @@
 
 **Status: Runnable static catalog preview — no published policy reviews**
 
-A searchable starter directory of 30 apps, websites, and developer projects.
+A searchable starter directory of 31 apps, websites, and developer projects.
 Every entry explicitly marks terms and privacy policies as not reviewed.
 The planned full product will explain policies with version-specific citations.
 
@@ -28,6 +28,11 @@ Five services now have unpublished research in progress: GitHub, YouTube,
 Instagram/Meta, ChatGPT, and Amazon.com. Seven document drafts have short
 citations; three documents are blocked and some captures remain incomplete.
 The website exposes source metadata, not unapproved explanations.
+
+Apple Developer has a separate unpublished program-agreement draft from a
+user-supplied PDF. Its source URL, authenticity, original retrieval date, and
+applicable region remain unverified. The printed date is not an effective date;
+the PDF is kept local and never exported. Privacy coverage remains absent.
 
 **Suggest a policy:** https://joshiujjwal.github.io/terms-made-clear/submit/ .
 It opens a prefilled public GitHub issue. After a write-capable maintainer adds

@@ -7,7 +7,7 @@ of popular apps and websites in plain language. Readers can identify meaningful
 tradeoffs, inspect cited red flags, and follow links to the original policies.
 
 Status: the full evidence-backed product is planned. A runnable static preview
-now exposes 30 curated service identities with explicit unreviewed coverage.
+now exposes 31 curated service identities with explicit unreviewed coverage.
 No policy versions, summaries, citations, or findings are published.
 
 ## Approved static preview
@@ -43,6 +43,20 @@ statements and interpretations, null editorial approval, and explicit source
 access/reuse limitations. Missing checksums, dates, applicability, and failed
 retrievals stay visible. The website may show source links and progress but must
 not render unapproved explanation text or excerpts. Publication remains deferred.
+
+## Approved local-PDF research extension
+
+ADR 0004 adds Apple Developer as a distinct catalog service with unpublished
+research from a user-supplied program agreement. Validated local-PDF provenance
+records a byte checksum, document identifier, printed date, page count, and local
+inspection day. A missing official source URL and original retrieval date stay
+null; a printed date does not establish a universal effective date.
+
+This adds no publication capability. The website shows only provenance, scope,
+and progress; draft explanations and excerpts remain server-only, and the full
+PDF is neither committed nor exported. The agreement is not evidence of Apple's
+consumer terms or a standalone privacy policy. Regional attachments and missing
+paid-distribution schedules remain explicit blockers.
 
 ## Problem
 

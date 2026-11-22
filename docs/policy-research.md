@@ -1,16 +1,17 @@
 # Policy research and public source intake
 
 These are unpublished research leads, **not completed or approved reviews**.
-`data/catalog.json` retains `not_reviewed`. `data/research.json` contains seven
-short cited drafts across five services and three blocked document records.
+`data/catalog.json` retains `not_reviewed`. `data/research.json` contains eight
+short cited drafts across six services and three blocked document records.
 
-| Service          | Terms                      | Privacy                       | Important limitation                                                                      |
-| ---------------- | -------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
-| GitHub           | Draft, HTML checksum       | Draft, HTML checksum          | Organization/Enterprise and individual license grants need further review                 |
-| YouTube          | Draft, HTML checksum       | Draft, Google policy checksum | Multi-service scope, license duration, settings, and regional applicability incomplete    |
-| ChatGPT          | Excerpt-only draft         | Excerpt-only US draft         | Direct capture 403; full checksums unknown; privacy updated date is not an effective date |
-| Instagram / Meta | Blocked, Help Center shell | Excerpt-only Meta draft       | No terms body; privacy shell not policy evidence; US regional notice unreviewed           |
-| Amazon.com       | Blocked, HTTP 503          | Blocked, HTTP 503             | No clauses, dates, or policy-content checksums verified                                   |
+| Service          | Terms                      | Privacy                       | Important limitation                                                                              |
+| ---------------- | -------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| GitHub           | Draft, HTML checksum       | Draft, HTML checksum          | Organization/Enterprise and individual license grants need further review                         |
+| YouTube          | Draft, HTML checksum       | Draft, Google policy checksum | Multi-service scope, license duration, settings, and regional applicability incomplete            |
+| ChatGPT          | Excerpt-only draft         | Excerpt-only US draft         | Direct capture 403; full checksums unknown; privacy updated date is not an effective date         |
+| Instagram / Meta | Blocked, Help Center shell | Excerpt-only Meta draft       | No terms body; privacy shell not policy evidence; US regional notice unreviewed                   |
+| Amazon.com       | Blocked, HTTP 503          | Blocked, HTTP 503             | No clauses, dates, or policy-content checksums verified                                           |
+| Apple Developer  | Local-PDF draft            | Not assessed                  | Program agreement only; authenticity, official source URL, and original retrieval date unverified |
 
 The four HTML checksums identify complete HTTP responses, including page
 furniture. Document-tool excerpts lack a recorded complete-response checksum and
@@ -25,7 +26,33 @@ and interpretations are separate. Excerpts are limited to 90 words per record.
 The server-only dataset is not passed to client components; public detail pages
 show only source/capture metadata and progress, never unapproved explanations.
 No ToS;DR data or ratings were imported; its current data reuse license is not
-verified. No full policies were saved or uploaded to external AI services.
+verified. No fetched full policies were saved or uploaded to external AI services.
+The user-supplied Apple PDF remains local and is excluded from Git and the export.
+
+## Apple Developer: supplied program agreement
+
+The separate `apple-developer` entry covers program membership, not consumer
+Apple services. The supplied PDF has 132 pages and ends with `LYL262 / October
+29, 2026`. Its complete-file SHA-256 is
+`645a93a63d0066e9c175f7f517f7675b7afab9630179b553a3fbbc0154eed3be`.
+This identifies local bytes, not a verified official download or current terms.
+Local inspection occurred on November 22, 2026; original retrieval and agreement
+effective dates are unknown. The printed date is recorded separately.
+
+Four unpublished points separate source statements from interpretation and cite
+this version's sections/pages: changes (Section 4, page 45), fees/renewal
+(Section 8, page 54; Section 11.1, page 56), termination (Section 11.2, pages
+56-57), and liability with applicable-law exceptions (Section 13, pages 58-59).
+The website does not render these explanations or quotations.
+
+**Before publication:** obtain and verify an official source URL with separate
+fetching approval if needed; confirm authenticity, reuse rights, quotations and
+surrounding qualifications; review linked agreements and regional attachments;
+obtain human editorial approval. Paid-distribution Schedules 2 and 3 are
+referenced but not included. Attachments have distinct region/date conditions;
+the printed footer date must not replace them. No privacy review, commission
+assessment, universal refund conclusion, or safety judgment is implied.
+See [ADR 0004](adr/0004-local-pdf-research.md).
 
 ## Completing the first five
 

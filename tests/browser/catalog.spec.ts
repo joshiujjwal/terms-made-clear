@@ -63,7 +63,7 @@ test("should preserve category filters when navigating pages", async ({
   page,
 }) => {
   await page.goto("./services/?category=developer");
-  await expect(page.getByRole("status")).toContainText("5 services");
+  await expect(page.getByRole("status")).toContainText("6 services");
   await expect(page.getByRole("link", { name: "Next page" })).toHaveCount(0);
   await page.goto("./services/");
   await page.getByRole("link", { name: "Next page" }).click();
@@ -83,7 +83,7 @@ test("should display explicit errors when shared parameters are malformed", asyn
       .filter({ hasText: "Could not apply these filters." }),
   ).toContainText("Page must be a positive whole number.");
   await page.getByRole("link", { name: "Clear filters", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("30 services");
+  await expect(page.getByRole("status")).toContainText("31 services");
 });
 
 test("should show separate missing policy coverage when visiting a direct detail URL", async ({

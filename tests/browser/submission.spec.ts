@@ -103,3 +103,92 @@ test.describe("without JavaScript", () => {
     ).toBeVisible();
   });
 });
+
+test("should expose local document provenance without publishing claims when visiting Apple Developer", async ({
+  page,
+}, testInfo) => {
+  await page.goto("./services/?q=apple");
+  await page
+    .getByRole("link", { name: "Apple Developer", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Apple Developer", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Draft awaiting human review", { exact: true }),
+  ).toHaveCount(1);
+  await expect(page.getByText("Not reviewed", { exact: true })).toHaveCount(2);
+  await expect(
+    page.getByText("No verified source URL; supplied PDF only.", {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Read original terms" }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByText(
+      "Apple Developer Program License Agreement. LYL262; printed date 2026-10-29; 132 pages.",
+      { exact: true },
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "Recorded locally 2026-11-22; original retrieval date unknown",
+      { exact: true },
+    ),
+  ).toBeVisible();
+  expect(await page.content()).not.toContain(
+    "Apple may change the Program Requirements",
+  );
+  expect(await page.content()).not.toContain(
+    "Budget for an annual membership cost",
+  );
+  const effectiveDate = page
+    .locator("dl > div")
+    .filter({ has: page.getByText("Effective date", { exact: true }) });
+  await expect(effectiveDate).toHaveText([
+    "Effective dateUnknown",
+    "Effective dateUnknown",
+  ]);
+  await page.screenshot({
+    path: testInfo.outputPath("apple-developer-desktop.png"),
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: testInfo.outputPath("apple-developer-mobile.png"),
+    fullPage: true,
+  });
+  await page.getByRole("link", { name: "Suggest an updated source" }).click();
+  await expect(page.getByLabel("Service", { exact: true })).toHaveValue(
+    "apple-developer",
+  );
+  await page
+    .getByLabel("Official policy URL")
+    .fill("https://developer.apple.com/support/terms/");
+  await page
+    .getByLabel("I understand this opens a public GitHub issue")
+    .check();
+  await page.route("https://github.com/**", async (route) => {
+    const url = new URL(route.request().url());
+    expect(url.searchParams.get("service")).toBe("apple-developer");
+    expect(url.searchParams.get("policy-url")).toBe(
+      "https://developer.apple.com/support/terms/",
+    );
+    await route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: "<h1>Apple source handoff</h1>",
+    });
+  });
+  await page.getByRole("button", { name: "Continue on GitHub" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Apple source handoff" }),
+  ).toBeVisible();
+});

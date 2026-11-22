@@ -2,6 +2,112 @@
   "schemaVersion": 1,
   "records": [
     {
+      "serviceSlug": "apple-developer",
+      "kind": "terms",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": null,
+      "attemptedAt": "2026-11-22T07:11:13.080999Z",
+      "accessNote": "User-supplied PDF inspected locally, not downloaded from a verified official URL. The footer reads LYL262 / October 29, 2026; this identifies the supplied document, not its authenticity or universal effective date. Original retrieval date is unknown. The full PDF is not published.",
+      "reuseNote": "Necessary short attributed excerpts only. No full-policy reproduction or external AI upload. Authenticity, reuse rights, quotation context, and human editorial approval remain unverified.",
+      "policyVersion": {
+        "id": "10000011-0000-4000-8000-000000000011",
+        "sourceUrl": null,
+        "effectiveDate": null,
+        "region": null,
+        "scopeNote": "Apple Developer Program membership and development/distribution rights, not Apple's consumer terms or a standalone privacy policy. United States is the review target, not confirmed applicability. Regional attachments can modify general provisions and have distinct dates. Paid-distribution Schedules 2 and 3 are referenced but absent; no universal commission or distribution conclusion is drawn.",
+        "retrievedAt": null,
+        "capturedOn": "2026-11-22",
+        "retrievalMethod": "local-pdf",
+        "fullResponseSha256": null,
+        "localDocument": {
+          "filename": "Apple_Developer_Program_License_Agreement_7MJ4WNXK5F.pdf",
+          "title": "Apple Developer Program License Agreement",
+          "documentId": "LYL262",
+          "documentDate": "2026-10-29",
+          "pageCount": 132,
+          "sha256": "645a93a63d0066e9c175f7f517f7675b7afab9630179b553a3fbbc0154eed3be"
+        }
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "unilateral-changes",
+          "policyStatement": "Section 4 permits Apple to change requirements or agreement terms at any time. Continued use requires acceptance; refusal can suspend or terminate access. New requirements are described as non-retroactive for already distributed apps, but Apple reserves removal rights for non-compliance.",
+          "explanation": "Program access can depend on accepting later changes. An app already in distribution should not be assumed exempt from removal under changed requirements.",
+          "uncertainty": "This is a general provision in the supplied file, not a verified current enforcement practice. Applicable regional terms, Section 5 certificate rights, and the full context require human review.",
+          "citations": [
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 4, Changes to Program Requirements or Terms; PDF page 45",
+              "excerpt": "Apple may change the Program Requirements or the terms of this Agreement at any time.",
+              "anchor": null
+            }
+          ]
+        },
+        {
+          "topic": "cancellation-renewal",
+          "policyStatement": "Section 8 requires an annual program fee unless Apple grants a valid waiver and describes it as non-refundable. Automatic charging requires opting in; Developer app purchases also invoke Attachment 9. Section 11.1 separately describes annual term renewal subject to payment and compliance.",
+          "explanation": "Budget for an annual membership cost unless a waiver applies. Automatic renewal of the agreement and opting into automatic card charges are distinct; this draft does not establish a specific price or cancellation procedure.",
+          "uncertainty": "The program website sets the fee; app-purchase terms, applicable law, waiver eligibility, and regional qualifications need review. No universal refund entitlement or absence of one is established.",
+          "citations": [
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 8, Program Fees; PDF page 54",
+              "excerpt": "unless You have received a valid fee waiver from Apple",
+              "anchor": null
+            },
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 8, Program Fees; PDF page 54",
+              "excerpt": "If You opt-in",
+              "anchor": null
+            },
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 11.1, Term; PDF page 56",
+              "excerpt": "the Term will automatically renew for successive one (1) year terms",
+              "anchor": null
+            }
+          ]
+        },
+        {
+          "topic": "account-termination",
+          "policyStatement": "Section 11.2 allows either party to terminate for convenience on 30 days' written notice. Separate termination grounds include a cure period for certain breaches, but not every ground. Section 11.3 imposes post-termination obligations and refers to a Schedule 1 delivery period.",
+          "explanation": "Membership should not be treated as guaranteed indefinitely. Notice, cure, application availability, and surviving obligations depend on the reason and the applicable provisions; not every termination follows the same timeline.",
+          "uncertainty": "All termination grounds, Schedule 1 distribution consequences, separately distributed macOS exceptions, and regional modifications require review. This is not evidence that existing end-user installations stop working immediately.",
+          "citations": [
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 11.2, Termination; PDF pages 56-57",
+              "excerpt": "effective 30 days after providing the other party with written notice of its intent to terminate.",
+              "anchor": null
+            }
+          ]
+        },
+        {
+          "topic": "liability",
+          "policyStatement": "Section 13 limits specified categories of damages to the extent permitted by applicable law and states a $50 total liability cap, with an applicable-law exception for personal injury.",
+          "explanation": "The agreement attempts to limit compensation for program-related losses. The stated cap is not a prediction of what a court would enforce or a conclusion that a clause is illegal.",
+          "uncertainty": "Applicable law, jurisdiction-specific modifications, exclusions, and the full relationship between Sections 12 and 13 require legal and editorial review. The printed cap should not be represented as universal.",
+          "citations": [
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 13, Limitation of Liability; PDF pages 58-59",
+              "excerpt": "other than as may be required by applicable law in cases involving personal injury",
+              "anchor": null
+            },
+            {
+              "policyVersionId": "10000011-0000-4000-8000-000000000011",
+              "section": "Section 13, Limitation of Liability; PDF pages 58-59",
+              "excerpt": "exceed the amount of fifty dollars ($50.00).",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "serviceSlug": "github",
       "kind": "terms",
       "status": "draft",

@@ -205,6 +205,14 @@
       "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
     },
     {
+      "slug": "apple-developer",
+      "name": "Apple Developer",
+      "website": "https://developer.apple.com/",
+      "category": "developer",
+      "serviceType": "website",
+      "reviewStatus": { "terms": "not_reviewed", "privacy": "not_reviewed" }
+    },
+    {
       "slug": "github",
       "name": "GitHub",
       "website": "https://github.com/",

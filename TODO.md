@@ -14,6 +14,44 @@ A phase is complete only with passing relevant checks and human review.
 Record evidence links or command results beside each completed item. Scaffold
 creation is not evidence that the application works.
 
+## Apple Developer local-PDF draft
+
+Approved scope: separate Apple Developer identity, unpublished cited draft,
+local-PDF provenance validation, detail metadata, and supporting tests/docs
+(ADR 0004). Initial scope excluded source fetching, editorial publication,
+commit, and deployment; the user subsequently authorized commit and push.
+
+- [x] Establish supported-Node baseline: 54 unit and 15 exported browser tests.
+- [x] Confirm red: the schema rejects local-PDF provenance and the Apple
+      Developer catalog link is absent. Add synthetic provenance regression
+      tests before implementation.
+- [x] Add the 31st catalog entry with both statuses `not_reviewed`, one
+      unpublished terms draft, and no invented privacy record.
+- [x] Verify the 132-page PDF's byte SHA-256 and seven quotations against their
+      cited pages (76 of the allowed 90 quoted words). Record LYL262 and its
+      printed date separately from unknown agreement-effective/retrieval dates.
+      Keep approval null and distinguish region-specific attachments.
+- [x] Validate local provenance without weakening remote-source requirements.
+      Keep the full supplied PDF local with a scoped Git ignore rule.
+- [x] Finish green: 65 unit and 16 exported browser tests; lint, format check,
+      typecheck, static build, and `git diff --check` passed on Node 22.23.5.
+      The new browser flow covers search, direct detail navigation, source
+      metadata, absent privacy coverage, and Apple source issue prefill.
+      Verified no Apple draft statements, explanations, excerpts, or PDF assets
+      appear in exported HTML/TXT/JS/JSON.
+- [x] Manually review diffs and desktop/mobile screenshots at 1280/390px.
+      No horizontal overflow observed; badges and missing-source notices remain
+      visible. Screenshots: ignored `test-results/` under
+      `submission-should-expose-l-55ab5-en-visiting-Apple-Developer-chromium/`,
+      `apple-developer-desktop.png` and `apple-developer-mobile.png`.
+      This is not a full accessibility audit or human editorial signoff.
+
+**Blockers:** verify official source URL, authenticity, reuse rights, actual
+applicability, quotation context, regional attachments, and missing paid
+Schedules 2 and 3; obtain human editorial approval. No publication or phase gate
+is complete. Pushing the implementation may trigger the existing Pages metadata
+deployment; it does not approve or publish the draft explanations.
+
 ## Five-service research and accepted source intake
 
 Approved scope: GitHub, YouTube, Instagram (Meta provider), ChatGPT, Amazon.com;

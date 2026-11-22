@@ -8,22 +8,61 @@ const citationSchema = z.strictObject({
   anchor: z.string().max(200).nullable(),
 });
 
+const localDocumentSchema = z.strictObject({
+  filename: z
+    .string()
+    .max(200)
+    .regex(/^[a-zA-Z0-9][a-zA-Z0-9_-]*\.pdf$/),
+  title: z.string().min(1).max(200),
+  documentId: z.string().min(1).max(100),
+  documentDate: z.iso.date().nullable(),
+  pageCount: z.number().int().min(1).max(100000),
+  sha256: z.string().regex(/^[a-f0-9]{64}$/),
+});
+
 const versionSchema = z
   .strictObject({
     id: z.uuid(),
-    sourceUrl: policyUrlSchema,
+    sourceUrl: policyUrlSchema.nullable(),
     effectiveDate: z.iso.date().nullable(),
     region: z.string().min(1).max(200).nullable(),
     scopeNote: z.string().min(1).max(1500),
     retrievedAt: z.iso.datetime().nullable(),
     capturedOn: z.iso.date(),
-    retrievalMethod: z.enum(["http-html", "browser-text", "document-excerpt"]),
+    retrievalMethod: z.enum([
+      "http-html",
+      "browser-text",
+      "document-excerpt",
+      "local-pdf",
+    ]),
     fullResponseSha256: z
       .string()
       .regex(/^[a-f0-9]{64}$/)
       .nullable(),
+    localDocument: localDocumentSchema.optional(),
   })
   .superRefine((version, context) => {
+    if (version.retrievalMethod === "local-pdf") {
+      if (
+        !version.localDocument ||
+        version.fullResponseSha256 !== null ||
+        version.retrievedAt !== null
+      ) {
+        context.addIssue({
+          code: "custom",
+          message:
+            "Local PDF captures need document provenance, not an HTTP checksum or invented retrieval time.",
+        });
+      }
+      return;
+    }
+    if (!version.sourceUrl || version.localDocument) {
+      context.addIssue({
+        code: "custom",
+        message:
+          "Remote captures need a source URL and cannot claim local PDF provenance.",
+      });
+    }
     if (
       version.retrievalMethod !== "document-excerpt" &&
       (!version.fullResponseSha256 || !version.retrievedAt)
@@ -51,7 +90,7 @@ const recordSchema = z
     kind: z.enum(["terms", "privacy"]),
     status: z.enum(["draft", "blocked"]),
     targetRegion: z.string().min(1).max(200),
-    sourceUrl: policyUrlSchema,
+    sourceUrl: policyUrlSchema.nullable(),
     attemptedAt: z.iso.datetime(),
     accessNote: z.string().min(1).max(1500),
     reuseNote: z.string().min(1).max(1500),
@@ -67,6 +106,9 @@ const recordSchema = z
             "model-training",
             "advertising",
             "account-termination",
+            "unilateral-changes",
+            "cancellation-renewal",
+            "liability",
           ]),
           policyStatement: z.string().min(1).max(1000),
           explanation: z.string().min(1).max(1000),
@@ -77,6 +119,16 @@ const recordSchema = z
       .max(10),
   })
   .superRefine((record, context) => {
+    if (
+      !record.sourceUrl &&
+      record.policyVersion?.retrievalMethod !== "local-pdf"
+    ) {
+      context.addIssue({
+        code: "custom",
+        message:
+          "A missing source URL is allowed only for a captured local PDF draft.",
+      });
+    }
     if (record.status === "blocked") {
       if (record.policyVersion !== null || record.points.length) {
         context.addIssue({

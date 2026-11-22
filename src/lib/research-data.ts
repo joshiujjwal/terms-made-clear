@@ -9,6 +9,8 @@ export const research = parseResearch(
   new Set(catalog.services.map((service) => service.slug)),
 );
 for (const record of research.records) {
+  // The schema permits absent URLs only for validated local-PDF provenance.
+  if (record.sourceUrl === null) continue;
   validateSubmission(
     {
       serviceSlug: record.serviceSlug,

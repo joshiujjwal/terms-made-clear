@@ -92,18 +92,31 @@ export default async function ServicePage({ params }: Props) {
                 <div>
                   <dt>Official policy source</dt>
                   <dd>
-                    {record ? (
+                    {record?.sourceUrl ? (
                       <a href={record.sourceUrl}>
                         {kind === "terms"
                           ? "Read original terms"
                           : "Read original privacy policy"}{" "}
                         &#8599;
                       </a>
+                    ) : record ? (
+                      "No verified source URL; supplied PDF only."
                     ) : (
                       "Not recorded"
                     )}
                   </dd>
                 </div>
+                {version?.localDocument ? (
+                  <div>
+                    <dt>Supplied document</dt>
+                    <dd>
+                      {version.localDocument.title}.{" "}
+                      {version.localDocument.documentId}; printed date{" "}
+                      {version.localDocument.documentDate ?? "unknown"};{" "}
+                      {version.localDocument.pageCount} pages.
+                    </dd>
+                  </div>
+                ) : null}
                 <div>
                   <dt>Applicable region</dt>
                   <dd>{version?.region ?? "Not verified"}</dd>
@@ -115,10 +128,12 @@ export default async function ServicePage({ params }: Props) {
                 <div>
                   <dt>Retrieved date</dt>
                   <dd>
-                    {version?.retrievedAt?.slice(0, 10) ??
-                      (version
-                        ? `Excerpt captured ${version.capturedOn}; exact retrieval time unknown`
-                        : "Not retrieved")}
+                    {version?.retrievalMethod === "local-pdf"
+                      ? `Recorded locally ${version.capturedOn}; original retrieval date unknown`
+                      : (version?.retrievedAt?.slice(0, 10) ??
+                        (version
+                          ? `Excerpt captured ${version.capturedOn}; exact retrieval time unknown`
+                          : "Not retrieved"))}
                   </dd>
                 </div>
                 <div>

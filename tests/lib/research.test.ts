@@ -42,8 +42,156 @@ const record = {
   ],
 };
 const dataset = { schemaVersion: 1, records: [record] };
+const localVersion = {
+  ...version,
+  sourceUrl: null,
+  retrievedAt: null,
+  retrievalMethod: "local-pdf",
+  fullResponseSha256: null,
+  localDocument: {
+    filename: "synthetic-agreement.pdf",
+    title: "Synthetic Program Agreement",
+    documentId: "SAMPLE001",
+    documentDate: "2026-10-29",
+    pageCount: 12,
+    sha256: "b".repeat(64),
+  },
+};
+const localRecord = {
+  ...record,
+  sourceUrl: null,
+  policyVersion: localVersion,
+};
 
 describe("unpublished policy research", () => {
+  it("should retain local provenance without inventing retrieval or effective dates when a PDF is supplied", () => {
+    const parsed = parseResearch(
+      { ...dataset, records: [localRecord] },
+      new Set(["sample"]),
+    ).records[0];
+    expect(parsed.sourceUrl).toBeNull();
+    expect(parsed.policyVersion).toMatchObject({
+      effectiveDate: null,
+      retrievedAt: null,
+      fullResponseSha256: null,
+      capturedOn: "2026-11-21",
+      localDocument: { documentDate: "2026-10-29", sha256: "b".repeat(64) },
+    });
+    expect(parsed.editorialApproval).toBeNull();
+  });
+  it("should reject missing provenance when a local PDF draft has no document metadata", () => {
+    const { localDocument, ...incompleteVersion } = localVersion;
+    void localDocument;
+    expect(() =>
+      parseResearch(
+        {
+          ...dataset,
+          records: [{ ...localRecord, policyVersion: incompleteVersion }],
+        },
+        new Set(["sample"]),
+      ),
+    ).toThrow();
+  });
+  it.each([
+    { filename: "../synthetic-agreement.pdf" },
+    { sha256: "not-a-checksum" },
+    { pageCount: 0 },
+    { documentDate: "unknown" },
+  ])(
+    "should reject invalid local document metadata when it contains %j",
+    (change) => {
+      expect(() =>
+        parseResearch(
+          {
+            ...dataset,
+            records: [
+              {
+                ...localRecord,
+                policyVersion: {
+                  ...localVersion,
+                  localDocument: { ...localVersion.localDocument, ...change },
+                },
+              },
+            ],
+          },
+          new Set(["sample"]),
+        ),
+      ).toThrow();
+    },
+  );
+  it.each([
+    { fullResponseSha256: "c".repeat(64) },
+    { retrievedAt: "2026-11-21T12:00:00Z" },
+  ])(
+    "should reject invented remote retrieval metadata when a local capture contains %j",
+    (change) => {
+      expect(() =>
+        parseResearch(
+          {
+            ...dataset,
+            records: [
+              { ...localRecord, policyVersion: { ...localVersion, ...change } },
+            ],
+          },
+          new Set(["sample"]),
+        ),
+      ).toThrow();
+    },
+  );
+  it("should require a source URL when research is not a local PDF capture", () => {
+    expect(() =>
+      parseResearch(
+        {
+          ...dataset,
+          records: [
+            {
+              ...record,
+              sourceUrl: null,
+              policyVersion: { ...version, sourceUrl: null },
+            },
+          ],
+        },
+        new Set(["sample"]),
+      ),
+    ).toThrow();
+  });
+  it("should reject local metadata when an HTTP capture is claimed", () => {
+    expect(() =>
+      parseResearch(
+        {
+          ...dataset,
+          records: [
+            {
+              ...record,
+              policyVersion: {
+                ...version,
+                localDocument: localVersion.localDocument,
+              },
+            },
+          ],
+        },
+        new Set(["sample"]),
+      ),
+    ).toThrow();
+  });
+  it("should reject a missing source URL when a blocked record has no captured version", () => {
+    expect(() =>
+      parseResearch(
+        {
+          ...dataset,
+          records: [
+            {
+              ...localRecord,
+              status: "blocked",
+              policyVersion: null,
+              points: [],
+            },
+          ],
+        },
+        new Set(["sample"]),
+      ),
+    ).toThrow();
+  });
   it("should preserve unknown dates and scope when a draft is valid", () => {
     const parsed = parseResearch(dataset, new Set(["sample"]));
     expect(parsed.records[0].policyVersion?.effectiveDate).toBeNull();
