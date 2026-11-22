@@ -29,6 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Link>
             <nav aria-label="Main navigation">
               <Link href="/services/">Catalog</Link>
+              <Link href="/submit/">Suggest a source</Link>
               <Link href="/methodology/">Methodology</Link>
               <Link href="/corrections/">Corrections</Link>
             </nav>

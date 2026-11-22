@@ -24,6 +24,17 @@ policy publication are deferred, not simulated. See
 
 Public site: https://joshiujjwal.github.io/terms-made-clear/
 
+Five services now have unpublished research in progress: GitHub, YouTube,
+Instagram/Meta, ChatGPT, and Amazon.com. Seven document drafts have short
+citations; three documents are blocked and some captures remain incomplete.
+The website exposes source metadata, not unapproved explanations.
+
+**Suggest a policy:** https://joshiujjwal.github.io/terms-made-clear/submit/ .
+It opens a prefilled public GitHub issue. After a write-capable maintainer adds
+`policy-accepted`, an Action creates an unverified link-only draft PR. No
+submitted URL is fetched and no review is automatically published. See
+[research limits and the maintainer workflow](docs/policy-research.md).
+
 ## Getting started
 
 ```sh
@@ -73,9 +84,11 @@ Reports are public; do not include personal or confidential information.
 
 ```text
 src/app/                     Static App Router pages
-src/components/              Catalog controls and cards
+src/components/              Catalog controls, rows, and source submission form
 src/lib/                     Catalog validation, search, and shared paths
 data/catalog.json            Unreviewed starter identities
+data/research.json           Unpublished cited research and access blockers
+data/submissions/            Isolated unverified issue-derived source candidates
 tests/lib/                   Synthetic catalog/input tests
 tests/browser/               Exported reader-flow tests and screenshots
 scripts/preview.mjs          Local static preview with the Pages path prefix
@@ -84,6 +97,7 @@ docs/adr/                    Architecture decision records
 .github/copilot-instructions.md
 .github/instructions/        Path-specific guidance
 .github/workflows/pages.yml  Checked static deployment
+.github/workflows/policy-intake.yml  Maintainer-gated link-only draft PRs
 TODO.md                      Evidence-gated implementation roadmap
 CLAUDE.md                    Claude session guidance
 AGENTS.md                    Shared coding-agent guidance
@@ -107,8 +121,9 @@ No license has been selected; public visibility alone does not grant reuse right
 
 ## Preview limitations
 
-There are no reviewed policy URLs, dates, excerpts, summaries, or findings.
-The United States is a planned review target, not confirmed policy applicability.
-Homepage availability and regional redirects are unverified. Interactive search
+There are no human-approved or published policy summaries or findings.
+Source links and some dates are recorded; missing checksums, failed retrievals,
+unknown effective dates, and regional uncertainty remain explicit. United States
+is the review target, not assumed applicability. Interactive search
 and pagination require JavaScript; the no-JavaScript fallback lists all detail
 links. The full database-backed spec and its human review gates remain open.

@@ -6,6 +6,11 @@ Runnable Next.js static catalog preview with 30 unreviewed starter services.
 Use Node.js 22 (at least 22.13) and npm. The Pages preview cannot run PostgreSQL;
 the full policy publication product remains deferred.
 
+ADR 0003 permits five unpublished research starts and maintainer-accepted
+link-only draft PRs. Keep `data/research.json` server-only; only source metadata
+may reach reader pages. `data/submissions/` is isolated from research/publication;
+build validates it, and intake must never fetch URLs or approve/merge reviews.
+
 | Task               | Command                                          |
 | ------------------ | ------------------------------------------------ |
 | Install            | `npm ci`                                         |

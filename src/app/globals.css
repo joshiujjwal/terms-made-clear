@@ -411,14 +411,17 @@ h3 {
   gap: 20px;
   margin-block: 32px;
 }
-.filter-bar label {
+.filter-bar label,
+.submission-form label {
   display: block;
   font-size: 0.9375rem;
   font-weight: 550;
   margin-bottom: 8px;
 }
 .filter-bar input,
-.filter-bar select {
+.filter-bar select,
+.submission-form input:not([type="checkbox"]),
+.submission-form select {
   width: 100%;
   height: 48px;
   border: 1px solid var(--ink);
@@ -427,7 +430,8 @@ h3 {
   color: var(--ink);
   padding: 10px 12px;
 }
-.filter-bar input::placeholder {
+.filter-bar input::placeholder,
+.submission-form input::placeholder {
   color: var(--muted);
 }
 .search-field {
@@ -465,6 +469,83 @@ h3 {
 }
 .error-notice p {
   margin-top: 8px;
+}
+.submission-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  gap: 72px;
+}
+.submission-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.source-field {
+  grid-column: 1 / -1;
+}
+.submission-fields .small {
+  margin-top: 8px;
+}
+.submission-form .consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 400;
+  margin-block: 28px;
+}
+.consent-label input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.submission-footnote {
+  margin-top: 12px;
+}
+.submission-direct {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 32px;
+}
+.submission-direct span {
+  display: block;
+  margin-top: 8px;
+}
+.submission-process {
+  border-top: 1px solid var(--ink);
+  padding-top: 16px;
+}
+.submission-process h2 {
+  font-size: 1.25rem;
+}
+.submission-process ol {
+  padding-left: 20px;
+  font-size: 0.9375rem;
+}
+.submission-process li {
+  padding-left: 8px;
+  margin-block: 24px;
+}
+.submission-process p,
+.source-note {
+  color: var(--muted);
+}
+.policy-panel .source-note {
+  font-size: 0.875rem;
+  max-width: 60ch;
+  margin-block: 20px;
+}
+@media (max-width: 800px) {
+  .submission-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .submission-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .empty-state {
   padding-block: 48px;
@@ -645,8 +726,10 @@ h3 {
   }
   .site-header nav {
     width: 100%;
-    justify-content: space-between;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: start;
+    gap: 12px 24px;
   }
   .introduction {
     grid-template-columns: 1fr;

@@ -25,6 +25,25 @@ requires JavaScript; all detail links remain available in a static fallback.
 The architecture and transactional requirements below describe the future full
 product, not capabilities of the Pages preview.
 
+## Approved research and link-intake extension
+
+ADR 0003 records the user-approved exception for five unpublished research drafts
+(GitHub, YouTube, Instagram/Meta, ChatGPT, Amazon.com) and `/submit/`. Contributors
+may suggest official policy URLs through a prefilled GitHub issue, requiring a
+GitHub account. This is not user-submitted policy analysis.
+
+A write-capable maintainer adds `policy-accepted` to a `policy-submission` issue
+to trigger a validated, link-only draft PR. No submitted URL is fetched, no code
+from the issue or PR runs, and no review is automatically approved or published.
+Submitted records are isolated from the website's research dataset. Public
+issues/PRs must contain no secrets, personal information, or full policies.
+
+Research drafts require version-linked short citations, distinct policy
+statements and interpretations, null editorial approval, and explicit source
+access/reuse limitations. Missing checksums, dates, applicability, and failed
+retrievals stay visible. The website may show source links and progress but must
+not render unapproved explanation text or excerpts. Publication remains deferred.
+
 ## Problem
 
 Legal policies are long, change over time, and obscure how a service uses data

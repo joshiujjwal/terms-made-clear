@@ -14,6 +14,48 @@ A phase is complete only with passing relevant checks and human review.
 Record evidence links or command results beside each completed item. Scaffold
 creation is not evidence that the application works.
 
+## Five-service research and accepted source intake
+
+Approved scope: GitHub, YouTube, Instagram (Meta provider), ChatGPT, Amazon.com;
+official-source fetching for these drafts only; public link suggestions accepted
+by a write-capable maintainer before draft PR automation (ADR 0003).
+
+- [x] Establish baseline: 20 unit and 10 exported browser tests passed.
+- [x] Capture schema/submission red (missing modules), then intake red (missing
+      module); 51 unit tests passed after implementation.
+- [x] Capture all three new browser tests red before implementing `/submit/`
+      and source metadata. Preserve Not reviewed badges; research progress is
+      separate, not editorial approval.
+- [x] Start ten document records for five services: seven cited unpublished
+      drafts and three blocked sources. Four complete HTML-response checksums;
+      three excerpt-only drafts have null full checksum and unknown exact
+      retrieval time. Instagram terms: shell only. Amazon documents: HTTP 503.
+      Details and human verification tasks: `docs/policy-research.md`.
+- [x] Add structured issue form, safe official-host URL validation, explicit
+      errors, current maintainer-permission gate, deterministic branch/path,
+      idempotent draft PR creation, and isolated unverified source records.
+      No intake fetching, external AI calls, approval, or auto-merge.
+- [x] Create `policy-submission` and `policy-accepted` labels; enable GitHub's
+      combined workflow PR-creation setting, retaining read-only defaults.
+      The implementation never uses approval permissions.
+- [x] Finish local checks: 54 unit and 15 exported browser tests passed; lint,
+      format check, typecheck, and static build passed. Red/green regressions
+      cover preserving ambiguous API writes, post-acceptance issue edits, and
+      320px navigation overflow. Verified home/submit/GitHub/Amazon/Instagram
+      layouts at 320, 390, 768, and 1280px, loaded fonts, keyboard form entry,
+      and no browser runtime errors. Source and rendered Impeccable scans exit
+      0; final form scans have no contrast advisory. Manually reviewed screenshots
+      in session artifacts: `policy-submit-390.png`, `policy-submit-1280.png`,
+      and `policy-github-390.png`/`policy-github-1280.png`.
+      Unapproved interpretations were absent from exported HTML/TXT/JS.
+      This is not a full human accessibility audit or editorial approval.
+- [ ] Commit/push, exercise a real accepted issue and duplicate acceptance,
+      verify generated draft PR and source isolation, then verify live Pages.
+
+**Human blockers:** complete and verify excerpt-only captures; accessible official
+Instagram terms and Amazon.com policies; regional/linked-policy and reuse
+review; actual editorial approval. No first-five review or phase gate is complete.
+
 ## Approved GitHub Pages catalog preview
 
 This is a limited static release, not completion of the PostgreSQL/policy MVP.

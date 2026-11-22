@@ -6,6 +6,11 @@ This repository has a Next.js static catalog preview for GitHub Pages, not the
 full database-backed product. Use Node.js 22 (at least 22.13) and the npm lockfile.
 See `docs/adr/0002-static-pages-preview.md` for the approved preview exception.
 
+ADR 0003 permits unpublished research and maintainer-gated policy-link draft
+PRs. See `docs/policy-research.md`: candidates never become reviews automatically,
+and the intake Action must not fetch submitted URLs. `npm run build` validates
+isolated submission files before export. Keep research imports server-only.
+
 | Operation                  | Command                                          |
 | -------------------------- | ------------------------------------------------ |
 | Install dependencies       | `npm ci`                                         |

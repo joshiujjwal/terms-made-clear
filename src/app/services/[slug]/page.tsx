@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categoryLabels, serviceTypeLabels } from "../../../lib/catalog";
 import { catalog } from "../../../lib/data";
+import { research } from "../../../lib/research-data";
 
 export const dynamicParams = false;
 
@@ -46,52 +47,99 @@ export default async function ServicePage({ params }: Props) {
       </div>
       <div className="notice">
         <strong>No reviewed policies are available for this service.</strong>{" "}
-        United States is our planned initial review region, not a verified
-        region for these policies. Homepage destinations and redirects have not
-        been independently checked.
+        United States is the review target. Check each policy&apos;s recorded
+        scope; missing region information does not confirm applicability.
+        Sources can change or redirect after capture.
       </div>
       <div className="policy-grid">
         {[
           ["terms", "Terms of service"],
           ["privacy", "Privacy policy"],
-        ].map(([kind, label]) => (
-          <section
-            className="policy-panel"
-            key={kind}
-            aria-labelledby={`${kind}-heading`}
-          >
-            <div className="panel-top">
-              <h2 id={`${kind}-heading`}>{label}</h2>
-              <span className="review-badge">Not reviewed</span>
-            </div>
-            <p>
-              No summary, citations, or documented findings have been published.
-              The policy&apos;s existence or contents have not been assessed.
-            </p>
-            <dl className="policy-dates">
-              <div>
-                <dt>Official policy source</dt>
-                <dd>Not recorded</dd>
+        ].map(([kind, label]) => {
+          const record = research.records.find(
+            (entry) =>
+              entry.serviceSlug === service.slug && entry.kind === kind,
+          );
+          const version = record?.policyVersion;
+          return (
+            <section
+              className="policy-panel"
+              key={kind}
+              aria-labelledby={`${kind}-heading`}
+            >
+              <div className="panel-top">
+                <h2 id={`${kind}-heading`}>{label}</h2>
+                <span className="review-badge">Not reviewed</span>
               </div>
-              <div>
-                <dt>Applicable region</dt>
-                <dd>Not verified</dd>
-              </div>
-              <div>
-                <dt>Effective date</dt>
-                <dd>Unknown</dd>
-              </div>
-              <div>
-                <dt>Retrieved date</dt>
-                <dd>Not retrieved</dd>
-              </div>
-              <div>
-                <dt>Editorial review date</dt>
-                <dd>Not reviewed yet</dd>
-              </div>
-            </dl>
-          </section>
-        ))}
+              <p>
+                No summary, citations, or documented findings have been
+                published.
+                {!record
+                  ? " The policy's existence or contents have not been assessed."
+                  : null}
+              </p>
+              <dl className="policy-dates">
+                {record ? (
+                  <div>
+                    <dt>Research progress</dt>
+                    <dd>
+                      {record.status === "draft"
+                        ? "Draft awaiting human review"
+                        : "Source access incomplete"}
+                    </dd>
+                  </div>
+                ) : null}
+                <div>
+                  <dt>Official policy source</dt>
+                  <dd>
+                    {record ? (
+                      <a href={record.sourceUrl}>
+                        {kind === "terms"
+                          ? "Read original terms"
+                          : "Read original privacy policy"}{" "}
+                        &#8599;
+                      </a>
+                    ) : (
+                      "Not recorded"
+                    )}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Applicable region</dt>
+                  <dd>{version?.region ?? "Not verified"}</dd>
+                </div>
+                <div>
+                  <dt>Effective date</dt>
+                  <dd>{version?.effectiveDate ?? "Unknown"}</dd>
+                </div>
+                <div>
+                  <dt>Retrieved date</dt>
+                  <dd>
+                    {version?.retrievedAt?.slice(0, 10) ??
+                      (version
+                        ? `Excerpt captured ${version.capturedOn}; exact retrieval time unknown`
+                        : "Not retrieved")}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Editorial review date</dt>
+                  <dd>Not reviewed yet</dd>
+                </div>
+              </dl>
+              {record ? (
+                <p className="source-note">
+                  {record.accessNote} {version?.scopeNote}
+                </p>
+              ) : null}
+              <Link
+                className="text-link"
+                href={`/submit/?service=${service.slug}&kind=${kind}`}
+              >
+                Suggest {record ? "an updated" : "a"} source &rarr;
+              </Link>
+            </section>
+          );
+        })}
       </div>
       {service.serviceType === "project" || service.slug === "gitlab" ? (
         <section className="notice project-note">

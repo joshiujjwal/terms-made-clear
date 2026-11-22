@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "serviceSlug": "github",
+      "kind": "terms",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "attemptedAt": "2026-11-21T23:49:47.799157Z",
+      "accessNote": "Official HTML read; the checksum identifies the full HTML response, including page furniture, not a canonical plain-text policy.",
+      "reuseNote": "Necessary short attributed excerpts only. No general reuse license established; human verification required before any publication.",
+      "policyVersion": {
+        "id": "10000001-0000-4000-8000-000000000001",
+        "sourceUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+        "effectiveDate": "2026-04-27",
+        "region": null,
+        "scopeNote": "General GitHub service terms; organization and Enterprise agreements may also apply. United States is the review target, not verified exclusive applicability.",
+        "retrievedAt": "2026-11-21T23:49:47.799157Z",
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "http-html",
+        "fullResponseSha256": "c5490b6f5a3e69c094dd17a427038bc502da3af270fa8b3a4741265e9e3feab9"
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "content-licenses",
+          "policyStatement": "GitHub says users own their content but grant the licenses described in D.4-D.8. The ownership section says the licenses end on removal unless other users have forked the content.",
+          "explanation": "Owning your content and granting service licenses are separate questions. Deleting your copy should not be assumed to undo other users' forks.",
+          "uncertainty": "The individual D.4-D.8 license grants, AI-related terms, private-repository rules, and any existing software license need separate review; this is not a complete license assessment.",
+          "citations": [
+            {
+              "policyVersionId": "10000001-0000-4000-8000-000000000001",
+              "section": "D.3 Ownership and License Grants",
+              "excerpt": "You grant us and other Users the licenses in Sections D.4-D.8. These licenses apply to Your Content.",
+              "anchor": "3-ownership-and-license-grants"
+            },
+            {
+              "policyVersionId": "10000001-0000-4000-8000-000000000001",
+              "section": "D.3 Ownership and License Grants",
+              "excerpt": "You own Your Content. If you post Content you did not create, you are responsible for ensuring you have the right to post it and for complying with any applicable licenses.",
+              "anchor": "3-ownership-and-license-grants"
+            },
+            {
+              "policyVersionId": "10000001-0000-4000-8000-000000000001",
+              "section": "D.3 Ownership and License Grants",
+              "excerpt": "These licenses end when you remove Your Content, unless other Users have forked it.",
+              "anchor": "3-ownership-and-license-grants"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "github",
+      "kind": "privacy",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+      "attemptedAt": "2026-11-21T23:44:39.659942Z",
+      "accessNote": "Official HTML read; full-response checksum recorded. Other sections have not been comprehensively assessed.",
+      "reuseNote": "Necessary short attributed excerpt only. Human verification and reuse review required before publication.",
+      "policyVersion": {
+        "id": "10000002-0000-4000-8000-000000000002",
+        "sourceUrl": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+        "effectiveDate": "2026-04-27",
+        "region": null,
+        "scopeNote": "General privacy statement with a distinct organization-provided-account notice. The organization's privacy policy and data-processing agreement may matter.",
+        "retrievedAt": "2026-11-21T23:44:39.659942Z",
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "http-html",
+        "fullResponseSha256": "d7bd072652f46ec1664e0fa920ee1dc7f5b7adf79d436637cee9c256527caab2"
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "account-control",
+          "policyStatement": "For an organization-provided GitHub account, the organization becomes the data controller and the privacy statement's direct applicability changes.",
+          "explanation": "A work or school account should not be treated as having exactly the same privacy relationship as an independently created personal account. Check the organization's rules too.",
+          "uncertainty": "This point is limited to organization-provided accounts. It does not establish any particular employer's access, monitoring practices, or contractual arrangements.",
+          "citations": [
+            {
+              "policyVersionId": "10000002-0000-4000-8000-000000000002",
+              "section": "End User Notice: Organization-Provided GitHub Accounts",
+              "excerpt": "Should you access a GitHub Service through an account provided by an organization, such as your employer or school, the organization becomes the Data Controller, and this Privacy Statement's direct applicability to you changes.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "youtube",
+      "kind": "terms",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://www.youtube.com/t/terms?hl=en&gl=US",
+      "attemptedAt": "2026-11-21T23:44:39.974464Z",
+      "accessNote": "Official US-localized terms read; the page explicitly states its effective date. Full HTML response checksum recorded.",
+      "reuseNote": "One necessary short attributed excerpt. Human verification and reuse review required before publication.",
+      "policyVersion": {
+        "id": "10000003-0000-4000-8000-000000000003",
+        "sourceUrl": "https://www.youtube.com/t/terms?hl=en&gl=US",
+        "effectiveDate": "2023-12-15",
+        "region": null,
+        "scopeNote": "US-localized YouTube terms, provided by Google LLC. Localization is not proof of applicability to every US user; age, account, and incorporated-policy conditions require review.",
+        "retrievedAt": "2026-11-21T23:44:39.974464Z",
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "http-html",
+        "fullResponseSha256": "f0f57c1dba507127e6f531cc8b62226adf44165598e8b45ad5005ac4866b8455"
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "content-licenses",
+          "policyStatement": "Providing content grants YouTube a worldwide, non-exclusive, royalty-free, sublicensable and transferable license for the described service and business purposes, including promotion.",
+          "explanation": "Uploading grants permissions to use the content; retaining ownership does not mean withholding all licensing rights. The license is tied to the purposes described, not an unrestricted license for every use.",
+          "uncertainty": "License duration, removal exceptions, the separate other-user license, monetization terms, and incorporated policies still require review.",
+          "citations": [
+            {
+              "policyVersionId": "10000003-0000-4000-8000-000000000003",
+              "section": "Your Content and Conduct / License to YouTube",
+              "excerpt": "By providing Content to the Service, you grant to YouTube a worldwide, non-exclusive, royalty-free, sublicensable and transferable license to use that Content (including to reproduce, distribute, prepare derivative works, display and perform it) in connection with the Service and YouTube's (and its successors' and Affiliates') business, including for the purpose of promoting and redistributing part or all of the Service.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "youtube",
+      "kind": "privacy",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://policies.google.com/privacy?hl=en-US",
+      "attemptedAt": "2026-11-21T23:44:39.767260Z",
+      "accessNote": "Official Google policy read; it expressly includes YouTube among covered services. Full HTML response checksum recorded.",
+      "reuseNote": "Necessary short attributed excerpt only. Human verification and reuse review required before publication.",
+      "policyVersion": {
+        "id": "10000004-0000-4000-8000-000000000004",
+        "sourceUrl": "https://policies.google.com/privacy?hl=en-US",
+        "effectiveDate": "2026-10-16",
+        "region": null,
+        "scopeNote": "Google's multi-service privacy policy, including YouTube. US English is a locale; product, account, settings, and regional qualifications remain relevant.",
+        "retrievedAt": "2026-11-21T23:44:39.767260Z",
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "http-html",
+        "fullResponseSha256": "b9792f9fded60f38977521b3f3d10cac2589d1bd6bf23d2ccecea7f842666526"
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "data-collection",
+          "policyStatement": "Google describes collecting and using information not associated with an account and storing information with browser, application, or device identifiers when users are not signed in.",
+          "explanation": "Being signed out should not be assumed to mean that no information is collected. The policy describes identifiers independent of a signed-in Google account.",
+          "uncertainty": "The excerpt does not establish the data collected in every YouTube configuration, retention duration, sale or sharing practices, or the effect of specific controls.",
+          "citations": [
+            {
+              "policyVersionId": "10000004-0000-4000-8000-000000000004",
+              "section": "Information Google collects",
+              "excerpt": "Google also collects and uses data that is not associated with your account. For example, when you're not signed in to a Google Account, we store the information we collect with unique identifiers tied to the browser, application, or device you're using.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "chatgpt",
+      "kind": "terms",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://openai.com/policies/terms-of-use/",
+      "attemptedAt": "2026-11-21T23:44:39.694326Z",
+      "accessNote": "The official document tool returned readable excerpts. Direct HTML capture returned HTTP 403; no full-response checksum or exact document-tool retrieval time was recorded. An editor must capture and verify the complete version.",
+      "reuseNote": "Necessary short attributed excerpts only. No policy-wide copying; human verification and reuse review required before publication.",
+      "policyVersion": {
+        "id": "10000005-0000-4000-8000-000000000005",
+        "sourceUrl": "https://openai.com/policies/terms-of-use/",
+        "effectiveDate": "2026-01-01",
+        "region": null,
+        "scopeNote": "Individual-use terms including ChatGPT; separate EEA/UK/Switzerland and business/API agreements. Apple integrations have a separate linked content-handling explanation. Excerpt-only capture, not a complete verified policy snapshot.",
+        "retrievedAt": null,
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "document-excerpt",
+        "fullResponseSha256": null
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "model-training",
+          "policyStatement": "The consumer terms permit described uses of content to operate and improve services and provide an opt-out route for using content to train models.",
+          "explanation": "Before supplying sensitive input, check the applicable account terms and training controls. The opt-out paragraph is not a promise that all service processing stops.",
+          "uncertainty": "The linked opt-out instructions have not been reviewed; feature-specific handling, account settings, and business/API terms differ. Complete source capture and editorial review are pending.",
+          "citations": [
+            {
+              "policyVersionId": "10000005-0000-4000-8000-000000000005",
+              "section": "Content / Our use of content",
+              "excerpt": "We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.",
+              "anchor": null
+            },
+            {
+              "policyVersionId": "10000005-0000-4000-8000-000000000005",
+              "section": "Content / Opt out",
+              "excerpt": "If you do not want us to use your Content to train our models, you can opt out by following the instructions in this article.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "chatgpt",
+      "kind": "privacy",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://openai.com/policies/privacy-policy/",
+      "attemptedAt": "2026-11-21T23:44:39.694937Z",
+      "accessNote": "Readable official document-tool excerpt; direct HTML capture returned HTTP 403. Full checksum and exact retrieval time are unknown. The page says Updated September 10, 2026, not an explicitly verified effective date.",
+      "reuseNote": "Necessary short attributed excerpt only; complete-source verification and human reuse review are pending.",
+      "policyVersion": {
+        "id": "10000006-0000-4000-8000-000000000006",
+        "sourceUrl": "https://openai.com/policies/privacy-policy/",
+        "effectiveDate": null,
+        "region": "United States",
+        "scopeNote": "The page is titled US privacy policy and marked Updated September 10, 2026. Business-customer content such as API content is excluded; EEA/UK/Switzerland have another policy. Updated date is not substituted for effective date.",
+        "retrievedAt": null,
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "document-excerpt",
+        "fullResponseSha256": null
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "data-collection",
+          "policyStatement": "The US privacy policy describes collecting input content, including prompts, uploads, and connected-service data, depending on the features used.",
+          "explanation": "A chat prompt is not the only possible input: files, media, and connected services can supply data too. Assess the features you actually enable.",
+          "uncertainty": "This is not a complete account of use, sharing, retention, deletion, or business offerings. Complete-source capture and human review are still required.",
+          "citations": [
+            {
+              "policyVersionId": "10000006-0000-4000-8000-000000000006",
+              "section": "1. Personal Data we collect / User Content",
+              "excerpt": "We collect Personal Data that you provide in the input to our Services (\"Content\"), including your prompts and other content you upload, such as files, images, audio and video, and data from connected services, depending on the features you use.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "instagram",
+      "kind": "terms",
+      "status": "blocked",
+      "targetRegion": "United States",
+      "sourceUrl": "https://help.instagram.com/581066165581870",
+      "attemptedAt": "2026-11-21T23:44:39.986010Z",
+      "accessNote": "HTTP 200 returned a Help Center shell, not readable policy content. No policy date, content checksum, or terms explanation was verified. A human-supplied accessible official document is needed.",
+      "reuseNote": "No policy excerpt copied. Reuse and source verification remain pending.",
+      "policyVersion": null,
+      "editorialApproval": null,
+      "points": []
+    },
+    {
+      "serviceSlug": "instagram",
+      "kind": "privacy",
+      "status": "draft",
+      "targetRegion": "United States",
+      "sourceUrl": "https://privacycenter.instagram.com/policy/",
+      "attemptedAt": "2026-11-21T23:44:40.000358Z",
+      "accessNote": "The official document tool returned Meta policy excerpts; direct HTML parsing yielded only a title shell. The shell checksum was not treated as policy evidence. Complete-version capture is pending.",
+      "reuseNote": "Necessary short attributed excerpts only. Human source, regional-notice, and reuse review required before publication.",
+      "policyVersion": {
+        "id": "10000008-0000-4000-8000-000000000008",
+        "sourceUrl": "https://privacycenter.instagram.com/policy/",
+        "effectiveDate": "2026-07-23",
+        "region": null,
+        "scopeNote": "Meta Privacy Policy with Instagram named in examples; this draft covers the Instagram catalog entry, not all Meta products. The linked United States Regional Privacy Notice has not been reviewed.",
+        "retrievedAt": null,
+        "capturedOn": "2026-11-21",
+        "retrievalMethod": "document-excerpt",
+        "fullResponseSha256": null
+      },
+      "editorialApproval": null,
+      "points": [
+        {
+          "topic": "advertising",
+          "policyStatement": "Meta describes using information to personalize features, content, recommendations, Instagram Feed, Stories, and ads, while excluding chosen information with special protections from showing ads.",
+          "explanation": "Personalization and advertising are among the described purposes. The special-protection qualification matters; this is not a claim that every supplied item is used for every advertising purpose.",
+          "uncertainty": "The categories of information, controls, regional notice, AI-related details, and cross-product handling need separate review. The complete version has not been captured.",
+          "citations": [
+            {
+              "policyVersionId": "10000008-0000-4000-8000-000000000008",
+              "section": "To provide, personalize and improve our Products",
+              "excerpt": "Personalizing features, content and recommendations, such as your Facebook Feed, Instagram Feed, Meta AI, Stories and ads.",
+              "anchor": null
+            },
+            {
+              "policyVersionId": "10000008-0000-4000-8000-000000000008",
+              "section": "To provide, personalize and improve our Products",
+              "excerpt": "We use information with special protections you choose to provide for these purposes, but not to show you ads.",
+              "anchor": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serviceSlug": "amazon",
+      "kind": "terms",
+      "status": "blocked",
+      "targetRegion": "United States",
+      "sourceUrl": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM",
+      "attemptedAt": "2026-11-21T23:44:39.790148Z",
+      "accessNote": "Official Amazon.com Conditions of Use endpoint returned HTTP 503 in both document-tool and direct attempts. No policy content, date, checksum, or explanation verified; manual official-source evidence is needed.",
+      "reuseNote": "No policy excerpt copied. Reuse and source verification remain pending.",
+      "policyVersion": null,
+      "editorialApproval": null,
+      "points": []
+    },
+    {
+      "serviceSlug": "amazon",
+      "kind": "privacy",
+      "status": "blocked",
+      "targetRegion": "United States",
+      "sourceUrl": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ",
+      "attemptedAt": "2026-11-21T23:44:39.980713Z",
+      "accessNote": "Official Amazon.com Privacy Notice endpoint returned HTTP 503 in both document-tool and direct attempts. No policy content, date, checksum, or explanation verified; no other-region policy substituted.",
+      "reuseNote": "No policy excerpt copied. Reuse and source verification remain pending.",
+      "policyVersion": null,
+      "editorialApproval": null,
+      "points": []
+    }
+  ]
+}
