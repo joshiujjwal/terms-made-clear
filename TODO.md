@@ -49,8 +49,26 @@ by a write-capable maintainer before draft PR automation (ADR 0003).
       and `policy-github-390.png`/`policy-github-1280.png`.
       Unapproved interpretations were absent from exported HTML/TXT/JS.
       This is not a full human accessibility audit or editorial approval.
-- [ ] Commit/push, exercise a real accepted issue and duplicate acceptance,
-      verify generated draft PR and source isolation, then verify live Pages.
+- [x] Commit/push application `0f749ac`; checked
+      [Pages run 44964931766](https://github.com/joshiujjwal/terms-made-clear/actions/runs/44964931766)
+      passed 54 unit tests, lint/format/typecheck, export, 15 browser tests,
+      and deployment. Live submission prefill and GitHub/Instagram/Amazon
+      metadata/mobile routes verified without runtime errors; live desktop/mobile
+      Impeccable scans exit 0. Screenshot: `policy-live-submit-390.png`.
+- [x] Exercise marked [issue #1](https://github.com/joshiujjwal/terms-made-clear/issues/1):
+      [intake run 44964976085](https://github.com/joshiujjwal/terms-made-clear/actions/runs/44964976085)
+      created [draft PR #2](https://github.com/joshiujjwal/terms-made-clear/pull/2)
+      with only `data/submissions/issue-1.json`. Manually reviewed the diff and
+      bot-written description; validated the actual downloaded JSON with the
+      trusted local schema. Approval is null, status unverified, auto-merge null,
+      and the PR is not merged. No submitted source was fetched.
+- [x] Remove/reapply acceptance and verify
+      [repeat run 44965104990](https://github.com/joshiujjwal/terms-made-clear/actions/runs/44965104990)
+      succeeds, reusing #2 with identical branch head
+      `ef9296e93d02a9762acbe8b430bce416510feb66` and no second PR.
+      The marked issue and draft PR remain available for human inspection.
+      PR check rollup is empty, as expected for GITHUB_TOKEN creation; manual
+      checks and human review are still required before any merge.
 
 **Human blockers:** complete and verify excerpt-only captures; accessible official
 Instagram terms and Amazon.com policies; regional/linked-policy and reuse
